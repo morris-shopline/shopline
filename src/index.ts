@@ -19,8 +19,16 @@ app.use(
 app.use(cors())
 app.use(express.json())
 
-// 根目錄 UI
+// 根目錄 UI 或自動導向授權
 app.get('/', (req, res) => {
+  const { appkey, handle, timestamp, sign } = req.query
+  if (appkey && handle && timestamp && sign) {
+    // 自動導向 Shopline 授權頁
+    const scope = 'read_products'
+    const redirectUri = encodeURIComponent(process.env.SHOPLINE_REDIRECT_URI || '')
+    const authorizeUrl = `https://${handle}.myshopline.com/admin/oauth-web/#/oauth/authorize?appKey=${process.env.SHOPLINE_API_KEY}&responseType=code&scope=${scope}&redirectUri=${redirectUri}`
+    return res.redirect(authorizeUrl)
+  }
   res.send(`
     <html>
       <head>
