@@ -2,10 +2,10 @@
   "name": "shopline-app",
   "version": "1.0.0",
   "description": "Shopline App with OAuth Integration",
-  "main": "src/server.ts",
+  "main": "src/index.ts",
   "scripts": {
-    "start": "ts-node src/server.ts",
-    "dev": "nodemon src/server.ts",
+    "start": "ts-node src/index.ts",
+    "dev": "nodemon src/index.ts",
     "build": "tsc",
     "test": "jest"
   },
