@@ -57,4 +57,4 @@ npm start
 
 ## 開發指南
 
-詳細的開發指南和實作筆記請參考 `PROCESSING_STATUS.md`。 
+詳細的開發指南和實作筆記請參考 `PROCESSING_STATUS.md`。
