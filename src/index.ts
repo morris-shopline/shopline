@@ -12,7 +12,8 @@ const port = process.env.PORT || 3000
 // 中間件
 app.use(
   helmet({
-    frameguard: false // 允許 iframe 載入
+    frameguard: false,
+    contentSecurityPolicy: false
   })
 )
 app.use(cors())
